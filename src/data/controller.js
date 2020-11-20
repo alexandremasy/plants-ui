@@ -30,6 +30,8 @@ export default class DataController{
 						})
 					})
 
+					this._store.commit('setPlants', this._plants);
+					this._store.commit('setCategories', this._categories);
           resolve({})
         })
     })

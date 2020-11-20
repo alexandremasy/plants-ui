@@ -5,12 +5,16 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    data: null
+		plants: null,
+		categories: null,
   },
   mutations: {
-    setData(state, value){
-      state.data = value
-    }
+		setCategories(state, value){
+			state.categories = value
+		},
+    setPlants(state, value){
+			state.plants = value
+		},
   },
   actions: {
   },
