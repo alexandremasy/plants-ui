@@ -1,4 +1,5 @@
 import { basil } from '@spices/basil'
+import Month from './month'
 
 /**
  * @class
@@ -13,8 +14,8 @@ export default class Harvest{
 	 */
 	static parse(data){
 		return new Harvest({
-			start: basil.get(data, 'start'),
-			end: basil.get(data, 'end')
+			start: new Month(basil.get(data, 'start')),
+			end: new Month(basil.get(data, 'end'))
 		})
 	}
 

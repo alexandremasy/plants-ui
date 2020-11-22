@@ -1,4 +1,5 @@
 import { basil } from '@spices/basil'
+import Month from './month'
 
 /**
  * Sowing information
@@ -14,14 +15,18 @@ export default class Sowing{
 	 * @returns {Sowing}
 	 */
 	static parse(data){
-		return new Sowing({
+    let end = basil.get(data, 'end')
+    let start = basil.get(data, 'start')
+		let ret = new Sowing({
 			density: basil.get(data, 'density'),
-			end: basil.get(data, 'end'),
-			start: basil.get(data, 'start'),
+			end: basil.isNil(end) ? null : Month.getFromInt(end.integer),
+			start: basil.isNil(start) ? null : Month.getFromInt(start.integer),
 			x: basil.get(data, 'x'),
 			y: basil.get(data, 'y'),
 			z: basil.get(data, 'z'),
-		})
+    });
+
+    return ret
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////

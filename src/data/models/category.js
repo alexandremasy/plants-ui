@@ -1,5 +1,6 @@
 import Sowing from './sowing'
 import Harvest from './harvest'
+import Month from './month'
 
 import { basil } from '@spices/basil'
 /**
@@ -19,8 +20,8 @@ export default class Category{
 		})
 
 		return new Harvest({
-			start,
-			end
+			start: Month.getFromtInt(start),
+			end: Month.getFromtInt(end)
 		})
 	}
 
@@ -42,17 +43,17 @@ export default class Category{
 		let density = null, end = 0, start = 0, x = 0, y = 0, z = 0
 		this.children.forEach(c => {
 			density: !basil.isNil(c.sowing.density) ? c.sowing.density : density,
-			end = Math.max(end, c.sowing.end.integer);
-			start = Math.min(start, c.sowing.start.integer);
-			x += c.sowing.x;
-			y += c.sowing.y;
-			z += c.sowing.z;
+			end = Math.max(end, basil.get(c, 'sowing.end.integer', 0));
+			start = Math.min(start, basil.get(c, 'sowing.start.integer', 99));
+			x += basil.get(c, 'sowing.x', 0);
+			y += basil.get(c, 'sowing.y', 0);
+			z += basil.get(c, 'sowing.z', 0);
 		})
 
 		return new Sowing({
 			density,
-			end,
-			start,
+			end: Month.getFromInt(end),
+			start: Month.getFromInt(start),
 			x: x / this.length,
 			y: y / this.length,
 			z: z / this.length

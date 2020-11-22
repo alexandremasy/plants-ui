@@ -4,15 +4,6 @@
  * @class
  */
 class Month {
-  /**
-   * @constructor
-   * @param {Array.<String>} labels  
-   * @param {Number} integer
-   */
-  constructor(labels, integer){
-    this.labels = labels;
-    this.integer = integer;
-  }
 
   /**
    * Parse the given value to match against the allowed values
@@ -23,6 +14,27 @@ class Month {
    */
   static parse = (value) => {
     return ALL.find(e => e.labels.includes(value))
+  }
+
+  /**
+   * Find the month corresponding to the given integer
+   * 
+   * @param {Number} value The value to search for
+   * @returns {Month}
+   * @static
+   */
+  static getFromInt = (value) => {
+    return ALL.find(e => e.integer === value)
+  }
+
+  /**
+   * @constructor
+   * @param {Array.<String>} labels  
+   * @param {Number} integer
+   */
+  constructor(labels, integer){
+    this.labels = labels;
+    this.integer = integer;
   }
 
   /**
@@ -117,6 +129,6 @@ const ALL = [
   November,
   December
 ];
-
+Month.ALL = ALL
 
 export default Month
