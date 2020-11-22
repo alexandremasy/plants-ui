@@ -1,0 +1,16 @@
+.view-home{
+
+  ////////////////////////////////////////////////////
+  //
+  //	Header
+  //
+  ////////////////////////////////////////////////////
+  .header{
+    display: grid;
+    grid-template-columns: max-content repeat(12, 24px);
+  }
+
+  .header__month{
+    border: 1px solid color(light20);
+  }
+}

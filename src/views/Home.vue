@@ -1,17 +1,15 @@
 <template>
   <main
 		id="main"
-		class="main">
+		class="main view-home">
 
 		<header class="header">
 			<article>Product</article>
-			<div class="header__months">
-				<article 
-					v-for="(month, i) in months"
-					:key="i"
-					class="header__month" 
-					title="Janvier">{{ month.labels[0][0] }}</article>
-			</div>
+			<article 
+				v-for="(month, i) in months"
+				:key="i"
+				class="header__month" 
+				title="Janvier">{{ month.labels[0][0] }}</article>
 		</header>
 
 		<details
@@ -56,3 +54,5 @@ export default {
 	},
 }
 </script>
+
+<style lang="scss" scoped src="@/styles/views/_home.scss"></style>
