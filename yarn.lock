@@ -911,6 +911,18 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@pepper/themes-abc@^1.20.0":
+  version "1.20.0"
+  resolved "https://npm.infinity-commerce.io:443/@pepper%2fthemes-abc/-/themes-abc-1.20.0.tgz#279bd20f6a2e4478deecc02cba8d34ae8a3db7a1"
+  integrity sha512-z6Z5BRpfxGi57JQlB8aL7SLrgYWT9J9yuGfhnutt+pRfcvALgwsbuDjIc22xAjEsHTDYpBkCYo0I35xn3tfJ6g==
+
+"@pepper/themes-spices@^1.12.0":
+  version "1.12.0"
+  resolved "https://npm.infinity-commerce.io:443/@pepper%2fthemes-spices/-/themes-spices-1.12.0.tgz#56b06368f0386b8f4fc298621608e789be5bfecb"
+  integrity sha512-jzlrxnP9aJ7Lt9dMSaFarDY1kg3gV4GWyU+P9/Sl9d8dP68ZTAdesybfOJKGliOcOhEUMszL9hua3bwuZ0mvww==
+  dependencies:
+    "@pepper/themes-abc" "^1.20.0"
+
 "@soda/friendly-errors-webpack-plugin@^1.7.1":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@soda/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.1.tgz#706f64bcb4a8b9642b48ae3ace444c70334d615d"
